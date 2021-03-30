@@ -18,4 +18,4 @@ Initial release
 
 * [Github](https://github.com/imyangyong/vscode-extension-fork/issues)
 
-**Enjoy!**
+**Enjoy it!**
