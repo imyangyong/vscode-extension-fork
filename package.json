@@ -1,46 +1,47 @@
 {
-  "name": "fork",
+	"name": "fork",
 	"displayName": "Fork",
 	"description": "",
-	"publisher": "AngusYang",
+	"publisher": "YongYang",
 	"version": "0.0.1",
 	"engines": {
-		"vscode": "^1.46.0"
+		"vscode": "^1.69.2"
 	},
 	"categories": [
 		"Other"
 	],
 	"activationEvents": [
-        "onCommand:fork.open"
+		"onCommand:fork.open"
 	],
-	"main": "./out/extension.js",
+	"main": "./dist/index.js",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/imyangyong/vscode-extension-fork"
+	},
+	"icon": "res/icon.webp",
 	"contributes": {
 		"commands": [
 			{
 				"command": "fork.open",
-				"title": "Fork"
+				"title": "Fork: open current git repository at fork app"
 			}
 		]
 	},
 	"scripts": {
-		"vscode:prepublish": "yarn run compile",
-		"compile": "tsc -p ./",
-		"watch": "tsc -watch -p ./",
-		"pretest": "yarn run compile && yarn run lint",
+		"vscode:prepublish": "pnpm run build",
+		"build": "NODE_ENV=production tsup",
+		"dev": "NODE_ENV=development tsup --watch",
 		"lint": "eslint src --ext ts",
-		"test": "node ./out/test/runTest.js"
+		"publish": "vsce publish --no-dependencies",
+		"pack": "vsce package --no-dependencies"
 	},
 	"devDependencies": {
-		"@types/vscode": "^1.46.0",
-		"@types/glob": "^7.1.3",
-		"@types/mocha": "^8.0.4",
-		"@types/node": "^12.11.7",
+		"@types/node": "^18.6.2",
+		"@types/vscode": "^1.69.0",
 		"eslint": "^7.19.0",
-		"@typescript-eslint/eslint-plugin": "^4.14.1",
-		"@typescript-eslint/parser": "^4.14.1",
-		"glob": "^7.1.6",
-		"mocha": "^8.2.1",
+		"pnpm": "^7.6.0",
+		"tsup": "^6.2.0",
 		"typescript": "^4.1.3",
-		"vscode-test": "^1.5.0"
+		"vsce": "^2.10.0"
 	}
 }
