@@ -2,7 +2,7 @@
 	"name": "fork",
 	"displayName": "Fork",
 	"description": "",
-	"publisher": "YongYang",
+	"publisher": "yong.yang",
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.69.2"
