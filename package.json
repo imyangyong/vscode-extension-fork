@@ -3,17 +3,18 @@
 	"displayName": "Fork",
 	"description": "",
 	"publisher": "imyangyong",
-	"version": "0.0.2",
+	"packageManager": "pnpm@10.10.0",
+	"version": "0.1.0",
 	"engines": {
-		"vscode": "^1.69.2"
+		"vscode": "^1.71.0"
 	},
 	"categories": [
 		"Other"
 	],
+	"main": "./dist/index.js",
 	"activationEvents": [
 		"onCommand:fork.open"
 	],
-	"main": "./dist/index.js",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/imyangyong/vscode-extension-fork"
@@ -36,12 +37,13 @@
 		"pack": "vsce package --no-dependencies"
 	},
 	"devDependencies": {
-		"@types/node": "^18.6.2",
-		"@types/vscode": "^1.69.0",
-		"eslint": "^7.19.0",
-		"pnpm": "^7.6.0",
-		"tsup": "^6.2.0",
-		"typescript": "^4.1.3",
+		"@antfu/eslint-config": "^4.13.0",
+		"@types/node": "^22.15.12",
+		"@types/vscode": "^1.99.1",
+		"eslint": "^9.26.0",
+		"pnpm": "^10.10.0",
+		"tsup": "^8.4.0",
+		"typescript": "^5.8.3",
 		"vsce": "^2.10.0"
 	}
 }
