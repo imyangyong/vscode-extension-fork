@@ -20,7 +20,20 @@ export function activate(context: ExtensionContext) {
 
 		// https://stackoverflow.com/questions/39569993/vs-code-extension-get-full-path
 		let rootPath: string = '';
-		if (workspace.workspaceFolders !== undefined) {
+		const activeEditor = window.activeTextEditor;
+
+		if (activeEditor) {
+			// Get the workspace folder for the currently active file
+			const workspaceFolder = workspace.getWorkspaceFolder(activeEditor.document.uri);
+			if (workspaceFolder) {
+				rootPath = workspaceFolder.uri.path;
+			}
+			else {
+				window.showErrorMessage('Fork error: Active file is not in a workspace folder');
+				return;
+			}
+		}
+		else if (workspace.workspaceFolders !== undefined) {
 			rootPath = workspace.workspaceFolders[0].uri.path;
 		}
 		else {
