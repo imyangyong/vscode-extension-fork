@@ -1,49 +1,50 @@
 {
-	"name": "fork",
-	"displayName": "Fork",
-	"description": "",
-	"publisher": "imyangyong",
-	"packageManager": "pnpm@10.10.0",
-	"version": "0.1.0",
-	"engines": {
-		"vscode": "^1.71.0"
-	},
-	"categories": [
-		"Other"
-	],
-	"main": "./dist/index.js",
-	"activationEvents": [
-		"onCommand:fork.open"
-	],
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/imyangyong/vscode-extension-fork"
-	},
-	"icon": "res/icon.webp",
-	"contributes": {
-		"commands": [
-			{
-				"command": "fork.open",
-				"title": "Fork: open current git repository at fork app"
-			}
-		]
-	},
-	"scripts": {
-		"vscode:prepublish": "pnpm run build",
-		"build": "NODE_ENV=production tsup",
-		"dev": "NODE_ENV=development tsup --watch",
-		"lint": "eslint src --ext ts",
-		"publish": "vsce publish --no-dependencies",
-		"pack": "vsce package --no-dependencies"
-	},
-	"devDependencies": {
-		"@antfu/eslint-config": "^4.13.0",
-		"@types/node": "^22.15.12",
-		"@types/vscode": "^1.99.1",
-		"eslint": "^9.26.0",
-		"pnpm": "^10.10.0",
-		"tsup": "^8.4.0",
-		"typescript": "^5.8.3",
-		"vsce": "^2.10.0"
-	}
+  "publisher": "imyangyong",
+  "name": "fork",
+  "displayName": "Fork",
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.10.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/imyangyong/vscode-extension-fork"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./dist/index.js",
+  "icon": "res/icon.webp",
+  "engines": {
+    "vscode": "^1.71.0"
+  },
+  "activationEvents": [
+    "onCommand:fork.open"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "fork.open",
+        "title": "Fork: open current git repository at fork app"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "pnpm run build",
+    "build": "NODE_ENV=production tsup",
+    "dev": "NODE_ENV=development tsup --watch",
+    "lint": "eslint src --ext ts",
+    "lint:fix": "eslint --fix src --ext ts",
+    "publish": "vsce publish --no-dependencies",
+    "pack": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.13.0",
+    "@types/node": "^22.15.12",
+    "@types/vscode": "^1.99.1",
+    "eslint": "^9.26.0",
+    "pnpm": "^10.10.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
+    "vsce": "^2.10.0"
+  }
 }
